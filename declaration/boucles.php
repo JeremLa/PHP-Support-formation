@@ -101,6 +101,21 @@ for ($i = 0; $i < strlen($a); $i++){
 echo '<br><br>';
 
 /**
+ * /!\ Attention, à chaque iteration de la boucle, l'agrégat est recalculé,
+ * dans l'exemple suivant, il n'y aura que 5 itérations au lieu des 10 attendus;
+ */
+$a = 10;
+$b = 20;
+
+for ($i = 0; $i < ($b - $a); $i++) {
+    $a++;
+    echo '/!\\ for : '.$a;
+    echo '<br>';
+}
+
+echo '<br><br>';
+
+/**
  * Tout comme la boucle for, la boucle foreach permet de parcourir un itérable (array, collection ...)
  * La différence, on enregistre dans une variable la donnée parcourue pour faciliter sa manipulation
  */
@@ -120,3 +135,7 @@ $fruits = ['0' => 'pomme', '1' => 'poire', '2' => 'banane'];
 foreach ($fruits as $key => $value) {
     echo 'foreach : '.$key.' => ' .$value. '<br>';
 }
+
+echo '<br><br>';
+echo '<br><br>';
+echo '<br><br>';
