@@ -3,25 +3,25 @@ require_once ('Objet.php');
 
 echo '<br><br>';
 echo '<i>';
-echo "Une class peut étendre une autre class avec le mot clé 'extends'";
+echo "Une classe peut étendre une autre classe avec le mot clé 'extends'";
 echo '<br>';
-echo "Elle pourra être instancié exactement de la même façon qu'un autre objet.";
+echo "Elle pourra être instanciée exactement de la même façon qu'un autre objet.";
 echo '<br>';
-echo "Ses propriétés seront private mais elle aura également accès à l'ensemble des propriété protected de la class qu'elle extend";
+echo "Ses propriétés seront private mais elle aura également accès à l'ensemble des propriétés protected de la classe qu'elle extend";
 echo '<br>';
 echo "Vous trouverez un exemple d'objet enfant dans le fichier Enfant.php";
 
 /**
- * Si l'on souhaite hériter une class d'un autre objet
+ * Si l'on souhaite hériter une clase d'un autre objet
  * on ajoute le mot clé 'extends' suivit du nom de l'objet
- * Il est possible d'extends de plusieurs objet
+ * Il est possible d'extends de plusieurs objets
  */
 class Enfant extends Objet {
 
     private $b = 0;
 
     /**
-     * Pour envoyer des données au parents lors de l'instanciation de
+     * Pour envoyer des données aux parents lors de l'instanciation de
      * l'objet, on va utiliser le format suivant
      *
      * parent::__construct($param)
@@ -43,8 +43,8 @@ class Enfant extends Objet {
     }
 
     /**
-     * Les accesseurs et Mutateurs sont des fonctions public qui permettent de manipuler
-     * les propiétés privé d'un objet.
+     * Les accesseurs et Mutateurs sont des fonctions publiques qui permettent de manipuler
+     * les propiétés privées d'un objet.
      * par convention on nomme un accesseur avec le format
      *
      *      get[Variable] () : [type de retour]
