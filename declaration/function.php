@@ -5,7 +5,7 @@ echo '<i>';
 echo "
     La déclaration d'une function se fait avec le schema suivant :<br>
     <br>
-    function <b>nom de la function</b> (<b>params1</b>, <b>params2</b>, <b>params3</b>, ...) {<br>
+    function <b>nom de la fonction</b> (<b>params1</b>, <b>params2</b>, <b>params3</b>, ...) {<br>
     ".str_repeat('&nbsp;', 4)."<b>...code</b><br>  
     }
 ";
@@ -18,8 +18,8 @@ function sansType($param1) {
 
 echo '<i>';
 echo "
-    Il est possible d'imposer un type au paramètre attendue en ajoutant le type devant le nom du paramètre.<br>
-    Cette contrainte peut être imposé au retour de la fonction également.
+    Il est possible d'imposer un type au paramètre attendu en ajoutant le type devant le nom du paramètre.<br>
+    Cette contrainte peut être imposée au retour de la fonction également.
 ";
 echo '</i>';
 echo '<br><br>';
@@ -30,7 +30,7 @@ function avecType(int $param1, array $param2, bool $param3, string $param4) : ob
 
 echo '<i>';
 echo "
-    Encore mieux, il est possible de typer le retour mais qu'il puisse aussi être null avec un <b>?</b>
+    Encore mieux, il est possible de typer le retour mais qu'il puisse aussi être nul avec un <b>?</b>
 ";
 echo '</i>';
 echo '<br><br>';
