@@ -23,7 +23,11 @@ abstract class Vehicule implements IVehicule {
      * @param $reservoirCapacite
      * @param $carburantType
      */
-    public function __construct($roues, $couleurs, $vitesseMax, $reservoirMax, $carburantType)
+    public function __construct(int $roues = 4,
+                                string $couleurs = 'blanc',
+                                int $vitesseMax = 110,
+                                int $reservoirMax = 50,
+                                string $carburantType = 'essence')
     {
         $this->roues = $roues;
         $this->couleurs = $couleurs;
@@ -134,13 +138,13 @@ class Voiture extends Vehicule {
      * @param $nombrePlace
      * @param $hasCoffre
      */
-    public function __construct(int $roues,
+    public function __construct(int $nombrePlace,
+                                bool $hasCoffre,
+                                int $roues,
                                 string $couleurs,
                                 int $vitesseMax,
                                 int $reservoirCapacite,
-                                string $carburantType,
-                                int $nombrePlace,
-                                bool $hasCoffre)
+                                string $carburantType)
     {
         parent::__construct($roues, $couleurs, $vitesseMax, $reservoirCapacite, $carburantType);
         $this->nombrePlace = $nombrePlace;
@@ -151,7 +155,7 @@ class Voiture extends Vehicule {
     function accelerer()
     {
         if(($this->vitesse + 5) < $this->getVitesseMax()){
-            $this->vitesse = $this->vitesse + 5;
+            $this->vitesse += 5;
         }else {
             $this->vitesse = $this->getVitesseMax();
         }
@@ -160,7 +164,7 @@ class Voiture extends Vehicule {
     function freiner()
     {
         if(($this->vitesse - 5) > 0){
-            $this->vitesse = $this->vitesse - 5;
+            $this->vitesse -= 5;
         }else {
             $this->vitesse = 0;
         }
@@ -170,6 +174,138 @@ class Voiture extends Vehicule {
     {
         while ($this->reservoir < $this->getReservoirMax()) {
             $this->reservoir++;
+        }
+    }
+}
+
+class DeuxRoues extends Vehicule {
+    private $cylindre;
+    private $hasCoffre;
+
+    /**
+     * DeuxRoues constructor.
+     * @param int $cylindre
+     * @param bool $hasCoffre
+     * @param int $roues
+     * @param string $couleurs
+     * @param int $vitesseMax
+     * @param int $reservoirCapacite
+     * @param string $carburantType
+     */
+    public function __construct(int $cylindre,
+                                bool $hasCoffre,
+                                int $roues,
+                                string $couleurs,
+                                int $vitesseMax,
+                                int $reservoirCapacite,
+                                string $carburantType)
+    {
+        parent::__construct($roues, $couleurs, $vitesseMax, $reservoirCapacite, $carburantType);
+
+        $this->cylindre = $cylindre;
+        $this->hasCoffre = $hasCoffre;
+    }
+
+
+    function accelerer()
+    {
+        if(($this->vitesse + 10) < $this->getVitesseMax()){
+            $this->vitesse += 10;
+        }else {
+            $this->vitesse = $this->getVitesseMax();
+        }
+    }
+
+    function freiner()
+    {
+        if(($this->vitesse - 3) > 0){
+            $this->vitesse -= 3;
+        }else {
+            $this->vitesse = 0;
+        }
+    }
+
+    function faireLePlein()
+    {
+        while ($this->reservoir < $this->getReservoirMax()) {
+            $this->reservoir = $this->reservoir + 2;
+        }
+    }
+}
+
+class Camion extends Vehicule {
+    private $hasRemorque;
+    private $isCharge;
+
+    /**
+     * DeuxRoues constructor.
+     * @param int $cylindre
+     * @param bool $hasCoffre
+     * @param int $roues
+     * @param string $couleurs
+     * @param int $vitesseMax
+     * @param int $reservoirCapacite
+     * @param string $carburantType
+     */
+    public function __construct(bool $hasRemorque,
+                                bool $isCharge,
+                                int $roues,
+                                string $couleurs,
+                                int $reservoirCapacite,
+                                string $carburantType)
+    {
+        $this->hasRemorque = $hasRemorque;
+        $this->isCharge = $isCharge;
+
+        if(!$this->hasRemorque) {
+            $this->isCharge = false;
+        }
+
+
+        $vitesseMax = $this->findVitesseMax();
+
+        parent::__construct($roues, $couleurs, $vitesseMax, $reservoirCapacite, $carburantType);
+
+
+    }
+
+    private function findVitesseMax () : int {
+        $vitessePossible = ['sansRemorque' => 100, 'avecRemorqueVide' => 90, 'avecRemorquePleine' => 80];
+
+        if(!$this->hasRemorque) {
+            return $vitessePossible['sansRemorque'];
+        }elseif ($this->hasRemorque && !$this->isCharge) {
+            return $vitessePossible['avecRemorqueVide'];
+        }elseif ($this->hasRemorque && $this->isCharge) {
+            return $vitessePossible['avecRemorquePleine'];
+        }else {
+            return 0;
+        }
+    }
+
+
+    function accelerer()
+    {
+        if(($this->vitesse + 2) < $this->getVitesseMax()){
+            $this->vitesse += 2;
+        }else {
+            $this->vitesse = $this->getVitesseMax();
+        }
+    }
+
+    function freiner()
+    {
+        if(($this->vitesse - 10) > 0){
+            $this->vitesse -= 10;
+        }else {
+            $this->vitesse = 0;
+        }
+    }
+
+    function faireLePlein()
+    {
+        while ($this->reservoir < $this->getReservoirMax()) {
+            $this->reservoir = $this->reservoir + 5;
         }
     }
 }
