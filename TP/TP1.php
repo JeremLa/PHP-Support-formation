@@ -1,4 +1,5 @@
 <?php
+echo '<a href="tp.php">&larr; Retour</a><br><br>';
 
 /**
  * - Stockez deux valeurs numériques différentes
