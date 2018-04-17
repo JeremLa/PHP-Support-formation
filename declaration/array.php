@@ -2,11 +2,11 @@
 echo '<a href="declaration.php">&larr; Retour</a><br><br>';
 
 /**
- * Depuis PHP 5.4 il existe deux façon de déclarer un tableau
+ * Depuis PHP 5.4 il existe deux façons de déclarer un tableau
  * en affichant nos tableaux avec var_dump, on constate que les deux variables contiennent
  * les mêmes valeurs.
  *
- * var_dump lui nous permet de vérifier le type, le nombre d'élément et le contenue de notre tableau.
+ * var_dump lui nous permet de vérifier le type, le nombre d'élément(s) et le contenu de notre tableau.
  */
 $array = array();
 $array2 = [];
@@ -22,7 +22,7 @@ echo '<br><br>';
 
 /**
  * PHP a associé le type 'array' à notre variable mais il ne regarde pas
- * le type des données dans ce tableau, on a le droit d'y mettre ce que le veux.
+ * le type des données dans ce tableau, on a le droit d'y mettre ce que l'on veut.
  */
 
 $array = ['truc', false, 10, 'machin'];
@@ -44,7 +44,7 @@ echo 'index 0 de notre tableau : '.$array[0];
 echo '<br><br>';
 /**
  * Parfois l'index numérique ne correspond pas aux besoins. Il est donc possible de faire des tableaux
- * associatif qui auront une clé personnalisé associé à une donnée.
+ * associatifs qui auront une clé personnalisée associée à une donnée.
  */
 
 $array = ['Virginie' => 'présidente', 'Sylvain' => 'associé', 'Bastien' => 'Colaborateur', 'Adrien' => 'Colaborateur'];
@@ -59,8 +59,8 @@ echo $array[0];
 echo '<br><br>';
 
 /**
- * On peut très facilement ajouté des données dans un tableau.
- * Il suffit d'utiliser la variable suivie de crochet vide si on souhaite juste ajouter une donnée à la fin,
+ * On peut très facilement ajouter des données dans un tableau.
+ * Il suffit d'utiliser la variable suivie de crochets vides si on souhaite juste ajouter une donnée à la fin,
  * avec la clé si on souhaite quelque chose de plus précis.
  */
 
@@ -79,8 +79,8 @@ var_dump($array);
 echo '<br><br>';
 
 /**
- * Comme on peut mettre n'importe quel type de données dans un tableau, on peut y mettre un tableau.
- * C'est ce que l'on appel un tableau multi dimensionel
+ * Comme on peut mettre n'importe quel type de donnée dans un tableau, on peut y mettre un tableau.
+ * C'est ce que l'on appelle un tableau multi dimensionel
  */
 
 $array = ['fruits' => ['tomate', 'pomme', 'poire'], 'légumes' => ['courgette', 'pomme de terre', 'haricot']];

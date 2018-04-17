@@ -2,12 +2,12 @@
 echo '<a href="tp.php">&larr; Retour</a><br><br>';
 
 /**
- * - Stockez deux valeurs numérique différente
+ * - Stockez deux valeurs numériques différentes
  * - Affichez le type des deux variables
  * - Créez une fonction qui prend un entier en paramètre
  * - Tipez le retour de cette fonction pour retourner un entier
- * - Appelez cette fonction tant que vos deux variables ne sont pas égal
- * - Affichez le contenue des deux variables à chaque étape.
+ * - Appelez cette fonction tant que vos deux variables ne sont pas égales
+ * - Affichez le contenu des deux variables à chaque étape.
  * - Créez et affichez un tableau avec deux fruits et trois légumes. *
  */
 

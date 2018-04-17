@@ -26,11 +26,11 @@ if( 0 > 1 ) {
 echo '<br><br>';
 
 /**
- * Au dela de 3 conditions (if / else) il est fortement recommandé d'utiliser
+ * Au delà de 3 conditions (if / else) il est fortement recommandé d'utiliser
  * un switch ... case
- * N'oubliez pas le default pour définir un comportement par défault (comme un else)
+ * N'oubliez pas le default pour définir un comportement par défaut (comme un else)
  * Le mot clé break est utilisé pour dire au programme de sortir quand il a fini le traitement.
- * Si il n'est pas renseigné, le script continue de tester les différents case.
+ * Si il n'est pas renseigné, le script continu de tester les différents case.
  */
 
 $a = 'c';
@@ -71,8 +71,8 @@ echo '<br><br>';
 
 /**
  * Le do...while a exactement le même comportement que la boucle while
- * Attention tout de même, les actions contenue dans la boucle seront toujours
- * joué au moins une fois. La condition n'étant testé qu'en fin de boucle.
+ * Attention tout de même, les actions contenues dans la boucle seront toujours
+ * jouées au moins une fois. La condition n'étant testée qu'en fin de boucle.
  */
 
 do {
@@ -84,11 +84,11 @@ do {
 echo '<br><br>';
 
 /**
- * La boucle for, permet de parcourir un iterable (tableau, collection, string ...)
- * Tout est définie dans la déclaration de la boucle
+ * La boucle for, permet de parcourir une iterable (tableau, collection, string ...)
+ * Tout est défini dans la déclaration de la boucle
  * for ( iterator , condition de parcours, incrementation) {}
  *
- * La condition de parcours doit imperativement pouvoir être remplie si l'on veut éviter les boucles infini.
+ * La condition de parcours doit imperativement pouvoir être remplie si l'on veut éviter les boucles infinies.
  *
  * L'itérateur peut être utilisé comme index de notre iterable pour en utiliser la donnée.
  */
@@ -102,7 +102,7 @@ echo '<br><br>';
 
 /**
  * /!\ Attention, à chaque iteration de la boucle, l'agrégat est recalculé,
- * dans l'exemple suivant, il n'y aura que 5 itérations au lieu des 10 attendus;
+ * dans l'exemple suivant, il n'y aura que 5 itérations au lieu des 10 attendues;
  */
 $a = 10;
 $b = 20;
@@ -128,7 +128,7 @@ foreach ($array as $letter) {
 echo '<br><br>';
 
 /**
- * foreach peut être utilisé pour parcourir des tableaux associatif (clé => valeur)
+ * foreach peut être utilisé pour parcourir des tableaux associatifs (clé => valeur)
  */
 
 $fruits = ['0' => 'pomme', '1' => 'poire', '2' => 'banane'];
