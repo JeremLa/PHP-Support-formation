@@ -1,4 +1,21 @@
 <?php
+/**
+ * TP 3
+ *
+ * Une fabrique de véhicules possède plusieurs chaînes de montage. L’une pour les voitures, une autre pour les deux roues et une dernière pour les camions.
+ *
+ * Un véhicule a toujours des roues, une couleur, une vitesse maximale, un réservoir et un carburant.
+ *
+ * Une voiture a un nombre de places, un coffre ou un hayon.
+ *
+ * Un deux roues a une cylindré, un coffre ou pas et peut être bridé ou non.
+ *
+ * Un camion lui a une vitesse maximale dépendante de son chargement, il peut avoir une remorque et elle même peut être chargée.
+ *
+ * Tout véhicule a la capacité d'accélérer, de freiner, de faire le plein.
+ *
+ */
+
 interface IVehicule {
     public function accelerer ();
     public function freiner ();

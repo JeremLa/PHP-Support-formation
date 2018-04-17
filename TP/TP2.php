@@ -1,6 +1,13 @@
 <?php
 echo '<a href="tp.php">&larr; Retour</a><br><br>';
 
+/**
+ * Class Voiture
+ *
+ * Faites une représentation de l'objet voiture en imaginant ses propriétés principales et
+ * les outils pour y accéder.
+ *
+ */
 class Fourgonnette {
     const ROUES = 4;
     private $carburant;
@@ -134,5 +141,5 @@ class Fourgonnette {
     }
 }
 
-$a = new Fourgonnette('Diesel', '120', 2300, 4260, 'gris');
+$a = new Voiture('Diesel', '120', 2300, 4260, 'gris');
 echo $a;
