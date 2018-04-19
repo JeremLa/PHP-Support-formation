@@ -34,11 +34,11 @@ abstract class Vehicule implements IVehicule {
 
     /**
      * Vehicule constructor.
-     * @param $roues
-     * @param $couleurs
-     * @param $vitesseMax
-     * @param $reservoirCapacite
-     * @param $carburantType
+     * @param int $roues
+     * @param string $couleurs
+     * @param int $vitesseMax
+     * @param int $reservoirMax
+     * @param string $carburantType
      */
     public function __construct(int $roues = 4,
                                 string $couleurs = 'blanc',
@@ -301,7 +301,7 @@ class Camion extends Vehicule {
     }
 
 
-    function accelerer()
+    public function accelerer()
     {
         if(($this->vitesse + 2) < $this->getVitesseMax()){
             $this->vitesse += 2;
@@ -310,7 +310,7 @@ class Camion extends Vehicule {
         }
     }
 
-    function freiner()
+    public function freiner()
     {
         if(($this->vitesse - 10) > 0){
             $this->vitesse -= 10;
@@ -319,10 +319,15 @@ class Camion extends Vehicule {
         }
     }
 
-    function faireLePlein()
+    public function isStop() : bool {
+        return $this->vitesse == 0;
+    }
+
+    public function faireLePlein()
     {
         while ($this->reservoir < $this->getReservoirMax()) {
             $this->reservoir = $this->reservoir + 5;
+            echo 'remplissage : '.$this->reservoir.'/'.$this->getReservoirMax();
         }
     }
 }

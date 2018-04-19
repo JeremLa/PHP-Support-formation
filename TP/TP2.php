@@ -8,7 +8,7 @@ echo '<a href="tp.php">&larr; Retour</a><br><br>';
  * les outils pour y accéder.
  *
  */
-class Fourgonnette {
+class Voiture {
     const ROUES = 4;
     private $carburant;
     private $vitesse = 0;
@@ -17,7 +17,7 @@ class Fourgonnette {
     private $longueur;
     private $couleur;
 
-    public function __construct($carburant, $vitesseMax, $hauteur, $longueur, $couleur)
+    public function __construct(string $carburant, int $vitesseMax, int $hauteur, int $longueur, string $couleur)
     {
         $this->carburant = $carburant;
         $this->vitesseMax = $vitesseMax;

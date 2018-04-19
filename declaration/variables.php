@@ -11,12 +11,11 @@ $c = true;
 $d = ['a', 'b', 'c'];
 
 echo '<i>';
-echo "
- La commande echo, en PHP, permet d'afficher du contenu de type simple : int, string, boolean, ...<br>
- <b>\$d</b> est un tableau, il faut utiliser la commande PHP var_dump().";
+echo
+' La commande echo, en PHP, permet d\'afficher du contenu de type simple : int, string, boolean, ...<br>
+ <b>\$d</b> est un tableau, il faut utiliser la commande PHP var_dump().';
 echo '</i>';
 echo '<br><br>';
-
 echo $a;
 echo '<br><br>';
 echo $b;
